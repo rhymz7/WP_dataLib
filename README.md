@@ -1,4 +1,4 @@
-# Carto SIAE37
-Cartographie des Structures d'Insertion par l'Activité Economique (SIAE) d'Indre-et-Loire.
+# Plugin WordPress
+Plugin permettant le tri par un filtre, et l'affichage de données sous forme d'un tableau et d'une map.
 
-Pour cette version, tout est en javascript, donc pas besoin de serveur, mais une connexion Internet est nécessaire pour le chargement de la carte.
+

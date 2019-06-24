@@ -19,7 +19,7 @@ class TestPlugin {
         add_action ('wp_enqueue_scripts', array($this, 'adding_scripts'));
     }
 
-    public $post_type = 'lolol';
+    public $post_type = 'try';
 
     // Appel de la méthode add_Text() uniquement à la modif ou création d'un post
     public function post_modified( $ID, $post ) {
@@ -100,7 +100,7 @@ class TestPlugin {
         $__id = 0;
         $tableau_pour_json = [];
         $args = array(
-            'post_type' => $this->post_type
+            'post_type' => 'voiture'
         );
         $the_query = new WP_Query( $args );
             if ( $the_query->have_posts() ) {

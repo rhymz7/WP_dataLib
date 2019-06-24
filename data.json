@@ -1,0 +1,3 @@
+{
+    "voitures":[{
+        "id":39,"name":"5008","latlon":["23","43"],"marque":"peugeot"},{"id":38,"name":"Serie 1","latlon":["123","32"],"marque":"bmw"},{"id":33,"name":"A3","latlon":["34","22"],"marque":"audi"}]}

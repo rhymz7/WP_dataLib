@@ -38,6 +38,7 @@ class TestPlugin {
         $filecut = substr($file, strpos($file, '<section>'), -15);
 
         // $config sert de configuration à la place d'une ihm, ihm TODO
+        // Configuration pour le filtre, et les colonnes
         $config = [
             "filters" => [
                 ["source" => 'voitures', "filter" => 'marque'], 
@@ -51,7 +52,8 @@ class TestPlugin {
                 ["label" => "Type", "source" => "Type"]
             ]
         ];
-        // Parcours du tableau filters, pour créer une chaine de caractères à insérer dans le html qui représentera les filtres configurés
+        // Parcours du sous-tableau filters, pour créer une chaine de caractères à insérer dans le html qui représentera les filtres configurés
+        // remplacera {filters} dans le html
         $filters = null;
         $id_filters = null;
         foreach ($config['filters'] as $key => $value) {
@@ -64,7 +66,9 @@ class TestPlugin {
             $id_filters[] = '#id-checkbox'.$key;
         }
         $string_id_filters = '"'.implode('","', $id_filters).'"';
-        // Parcours du tableau columns, pour créer une chaine de caractères à insérer dans le html qui représentera les colonnes configurés
+
+        // Parcours du sous-tableau columns, pour créer une chaine de caractères à insérer dans le html qui représentera les colonnes configurés
+        // remplacera {columns} dans le html
         $columns = null;
         foreach ($config['columns'] as $key => $value) {
             // var_dump($value["label"] . " and " . $value["source"]);
@@ -106,7 +110,7 @@ class TestPlugin {
             if ( $the_query->have_posts() ) {
                 while ( $the_query->have_posts() ) {
                     $the_query->the_post();
-
+                    // création d'un tableau avec les données récupérées des CPT WP, puis encodage json
                     $tableau_pour_json['voitures'][] = [
                         '__id'   => $__id,
                         'post_id'     => get_the_ID(),
